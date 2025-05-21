@@ -82,7 +82,14 @@ const About: React.FC = () => {
               />
             </div>
             <div className="absolute left-0 right-0 -bottom-6 mx-auto w-11/12 sm:w-2/3 h-32 sm:h-40 bg-green-800 rounded-lg p-4 sm:p-6 text-cream-50 flex items-center justify-center shadow-lg">
-              <p className="font-display text-base sm:text-lg italic text-center">
+              <p
+                className="font-display italic text-center text-lg sm:text-2xl leading-relaxed text-cream-200 px-4 sm:px-8"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontStyle: "italic",
+                  color: "#f8fafc",
+                }}
+              >
                 "A perfect retreat to disconnect and appreciate the true essence
                 of Portugal."
               </p>
