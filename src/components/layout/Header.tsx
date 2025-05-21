@@ -199,6 +199,7 @@ const Header: React.FC = () => {
             <Button
               variant="primary"
               size="small"
+              className="hidden md:inline-flex"
               onClick={() => {
                 const contactSection = document.getElementById("contact");
                 if (contactSection) {
