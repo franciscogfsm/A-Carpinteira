@@ -5,8 +5,8 @@ import Container from "../ui/Container";
 
 const Hero: React.FC = () => {
   // Typewriter effect for main heading
-  const fullText = `Discover the rustic charm of our house in Tomar`;
-  const highlight = "our house in Tomar";
+  const fullText = `Discover the rustic charm of our house in Castelo de Bode`;
+  const highlight = "our house in Castelo de Bode";
   const [displayed, setDisplayed] = useState(0);
   const [done, setDone] = useState(false);
   const intervalRef = useRef<number | null>(null);
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center w-full h-full"
         style={{
-          backgroundImage: "url('/Exterior1.avif')",
+          backgroundImage: "url('/casa fora 2 .avif')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70 sm:bg-opacity-60 backdrop-blur-sm w-full h-full"></div>
@@ -91,7 +91,10 @@ const Hero: React.FC = () => {
           className="w-full flex flex-col justify-center items-center"
         >
           <div className="mb-6 w-full flex flex-col items-center">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-display font-bold text-cream-50 leading-tight text-center max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-3xl">
+            <h1
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-display font-bold text-cream-50 leading-tight text-center max-w-2xl mx-auto"
+              style={{ lineHeight: 1.15 }}
+            >
               <span className="inline-block typewriter-main">
                 {getTypedText()}
                 <span

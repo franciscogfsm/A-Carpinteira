@@ -90,9 +90,8 @@ const Contact: React.FC = () => {
                   <div>
                     <div className="font-semibold mb-1">Address</div>
                     <div>
-                      R. do Barrinho 247,
+                      Bairro Cineiro, Aldeia do Mato
                       <br />
-                      2200-601 Aldeia do Mato, Aldeia do Mato
                     </div>
                   </div>
                 </div>
@@ -132,7 +131,7 @@ const Contact: React.FC = () => {
                   </span>
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <div>info@acarpinteira.pt</div>
+                    <div>acarpinteiralakehouse@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

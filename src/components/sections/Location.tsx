@@ -7,24 +7,24 @@ import Container from "../ui/Container";
 const attractions = [
   {
     name: "Tomar Castle",
-    distance: "5 km",
+    distance: "25 km",
     description:
       "Historic Templar castle and convent, a UNESCO World Heritage site.",
   },
   {
     name: "Almourol Castle",
-    distance: "15 km",
+    distance: "23 km",
     description: "Medieval castle on an island in the Tagus River.",
   },
   {
     name: "Fátima Sanctuary",
-    distance: "20 km",
+    distance: "73 km",
     description:
       "One of the most important Catholic pilgrimage sites in the world.",
   },
   {
     name: "Batalha Monastery",
-    distance: "35 km",
+    distance: "74 km",
     description: "Gothic masterpiece and UNESCO World Heritage site.",
   },
 ];
@@ -48,9 +48,7 @@ const Location: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display mb-6">Location</h2>
           <div className="w-20 h-1 bg-green-800 mx-auto mb-8"></div>
           <p className="max-w-2xl mx-auto text-brown-700">
-            Strategically located in the outskirts of Tomar, A Carpinteira
-            offers the tranquility of the countryside with easy access to the
-            region's attractions.
+            Bairro Cineiro, Aldeia do Mato.
           </p>
         </motion.div>
 
@@ -64,7 +62,7 @@ const Location: React.FC = () => {
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border-2 border-green-200 min-h-[320px] lg:min-h-[440px] flex items-center justify-center">
               <iframe
                 title="A Carpinteira Location Map"
-                src="https://www.google.com/maps?q=R.+do+Barrinho+247,+2200-601+Aldeia+do+Mato,+Portugal&output=embed"
+                src="https://www.google.com/maps?q=Aldeia+do+Mato,+Portugal&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -112,23 +110,23 @@ const Location: React.FC = () => {
                 <ul className="space-y-2 bg-green-100 p-5 rounded-lg shadow">
                   <li className="flex justify-between">
                     <span>Lisbon:</span>
-                    <span>130 km</span>
+                    <span>150 km</span>
                   </li>
                   <li className="flex justify-between">
                     <span>Porto:</span>
-                    <span>200 km</span>
+                    <span>156 km</span>
                   </li>
                   <li className="flex justify-between">
                     <span>Fátima:</span>
-                    <span>20 km</span>
+                    <span>73 km</span>
                   </li>
                   <li className="flex justify-between">
-                    <span>Nearest beach:</span>
-                    <span>80 km</span>
+                    <span>Nearest Fluvial beach:</span>
+                    <span>16 km</span>
                   </li>
                   <li className="flex justify-between">
                     <span>Lisbon Airport:</span>
-                    <span>140 km</span>
+                    <span>144 km</span>
                   </li>
                 </ul>
               </div>

@@ -78,8 +78,9 @@ const amenities = [
   },
   {
     icon: <Waves size={28} />,
-    title: "Canoe & Swimming",
-    description: "Enjoy a canoe ride or a refreshing dip in the lake anytime.",
+    title: "SUP Canoe & Swimming",
+    description:
+      "Enjoy a canoe ride, a refreshing dip in the lake, or a peaceful stand-up paddle session anytime.",
   },
 ];
 

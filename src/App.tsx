@@ -11,7 +11,7 @@ import Contact from "./components/sections/Contact";
 
 function App() {
   useEffect(() => {
-    document.title = "A Carpinteira - Lake House in Tomar";
+    document.title = "A Carpinteira - Lake House in Castelo de Bode";
     window.scrollTo(0, 0); // Scroll to top on refresh
   }, []);
 

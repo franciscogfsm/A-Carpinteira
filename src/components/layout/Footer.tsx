@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
           <div>
             <Logo variant="light" />
             <p className="mt-4 text-brown-100 max-w-xs">
-              A rustic country house in Tomar, where Portuguese tradition meets
-              modern comfort.
+              A rustic country house in Castelo de Bode, where Portuguese
+              tradition meets modern comfort.
             </p>
             <div className="flex space-x-4 mt-6">
               <a
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="mailto:info@acarpinteira.pt"
+                href="mailto:acarpinteiralakehouse@gmail.com"
                 className="text-cream-50 hover:text-cream-300 transition-colors"
               >
                 <Mail size={20} />
@@ -37,9 +37,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 flex-shrink-0" />
-                <span>
-                  R. do Barrinho 247, 2200-601 Aldeia do Mato, Aldeia do Mato
-                </span>
+                <span>Bairro Cineiro, Aldeia do Mato</span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="mr-2 flex-shrink-0" />
@@ -47,7 +45,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 flex-shrink-0" />
-                <span>info@acarpinteira.pt</span>
+                <span>acarpinteiralakehouse@gmail.com</span>
               </li>
             </ul>
           </div>

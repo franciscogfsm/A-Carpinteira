@@ -5,8 +5,8 @@ import Container from "../ui/Container";
 
 const Hero: React.FC = () => {
   // Typewriter effect for main heading
-  const fullText = `Discover the rustic charm of our house in Tomar`;
-  const highlight = "our house in Tomar";
+  const fullText = `Discover the rustic charm of our house in Castelo de Bode`;
+  const highlight = "our house in Castelo de Bode";
   const [displayed, setDisplayed] = useState(0);
   const [done, setDone] = useState(false);
   const intervalRef = useRef<number | null>(null);

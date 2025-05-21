@@ -265,7 +265,7 @@ const About: React.FC = () => {
                     </svg>
                   </span>
                   <span className="text-brown-900 font-semibold text-xs sm:text-sm text-center">
-                    Canoe/Swim
+                    SUP/Canoe/Swim
                   </span>
                 </motion.div>
               </motion.div>
