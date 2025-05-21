@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
     const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
     try {
       const payload = {
-        to: "martinsfrancisco2005@gmail.com",
+        to: "acarpinteiralakehouse@gmail.com",
         subject: `New Booking Inquiry from ${formState.name} - A Carpinteira`,
         text: `New Booking Inquiry\n\nHello,\n\nYou have received a new booking inquiry from your website:\n\nName: ${
           formState.name
