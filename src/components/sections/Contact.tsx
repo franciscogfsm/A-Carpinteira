@@ -90,9 +90,9 @@ const Contact: React.FC = () => {
                   <div>
                     <div className="font-semibold mb-1">Address</div>
                     <div>
-                      Main Street, 123
+                      R. do Barrinho 247,
                       <br />
-                      Tomar, Portugal
+                      2200-601 Aldeia do Mato, Aldeia do Mato
                     </div>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
                   </span>
                   <div>
                     <div className="font-semibold mb-1">Phone</div>
-                    <div>+351 123 456 789</div>
+                    <div>+351 919 174 515</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

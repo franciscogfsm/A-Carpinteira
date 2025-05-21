@@ -64,7 +64,7 @@ const Location: React.FC = () => {
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border-2 border-green-200 min-h-[320px] lg:min-h-[440px] flex items-center justify-center">
               <iframe
                 title="A Carpinteira Location Map"
-                src="https://www.google.com/maps?q=A+Carpinteira,+Tomar,+Portugal&output=embed"
+                src="https://www.google.com/maps?q=R.+do+Barrinho+247,+2200-601+Aldeia+do+Mato,+Portugal&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

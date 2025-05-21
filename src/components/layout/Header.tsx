@@ -114,7 +114,7 @@ const Header: React.FC = () => {
                 </a>
                 <div className="flex justify-between items-center gap-1">
                   <a
-                    href="tel:+351123456789"
+                    href="tel:+351919174515"
                     className="flex-1 flex flex-col items-center py-1 rounded-lg bg-brown-50 text-brown-800 hover:bg-brown-100 transition-colors text-xs"
                   >
                     <svg
@@ -195,23 +195,23 @@ const Header: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <Button
-                variant="primary"
-                size="small"
-                onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) {
-                    const y =
-                      contactSection.getBoundingClientRect().top +
-                      window.scrollY -
-                      60;
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                  }
-                }}
-              >
-                Book Now
-              </Button>
             </nav>
+            <Button
+              variant="primary"
+              size="small"
+              onClick={() => {
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                  const y =
+                    contactSection.getBoundingClientRect().top +
+                    window.scrollY -
+                    60;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
+              }}
+            >
+              Book Now
+            </Button>
             {/* Mobile Menu Toggle */}
             <button
               className="md:hidden text-brown-800"

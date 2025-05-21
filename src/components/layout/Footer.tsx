@@ -37,11 +37,13 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 flex-shrink-0" />
-                <span>Main Street, 123, Tomar, Portugal</span>
+                <span>
+                  R. do Barrinho 247, 2200-601 Aldeia do Mato, Aldeia do Mato
+                </span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="mr-2 flex-shrink-0" />
-                <span>+351 123 456 789</span>
+                <span>+351 919 174 515</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 flex-shrink-0" />

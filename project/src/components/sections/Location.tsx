@@ -48,9 +48,9 @@ const Location: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display mb-6">Location</h2>
           <div className="w-20 h-1 bg-green-800 mx-auto mb-8"></div>
           <p className="max-w-2xl mx-auto text-brown-700">
-            Strategically located in the outskirts of Tomar, A Carpinteira
-            offers the tranquility of the countryside with easy access to the
-            region's attractions.
+            Strategically located at R. do Barrinho 247, 2200-601 Aldeia do
+            Mato, Aldeia do Mato, A Carpinteira offers the tranquility of the
+            countryside with easy access to the region's attractions.
           </p>
         </motion.div>
 
@@ -64,7 +64,7 @@ const Location: React.FC = () => {
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border-2 border-green-200 min-h-[320px] lg:min-h-[440px] flex items-center justify-center">
               <iframe
                 title="A Carpinteira Location Map"
-                src="https://www.google.com/maps?q=A+Carpinteira,+Tomar,+Portugal&output=embed"
+                src="https://www.google.com/maps?q=R.+do+Barrinho+247,+2200-601+Aldeia+do+Mato,+Portugal&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
