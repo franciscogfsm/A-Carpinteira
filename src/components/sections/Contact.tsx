@@ -36,11 +36,62 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    setIsSubmitted(true);
-    setFormState({ name: "", email: "", message: "", guests: "" });
+    setIsSubmitted(false);
+    const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+    try {
+      const payload = {
+        to: "martinsfrancisco2005@gmail.com",
+        subject: `New Booking Inquiry from ${formState.name} - A Carpinteira`,
+        text: `New Booking Inquiry\n\nHello,\n\nYou have received a new booking inquiry from your website:\n\nName: ${
+          formState.name
+        }\nEmail: ${formState.email}\nGuests: ${formState.guests}\nCheck-in: ${
+          startDate ? startDate.toLocaleDateString() : ""
+        }\nCheck-out: ${
+          endDate ? endDate.toLocaleDateString() : ""
+        }\nMessage: ${
+          formState.message
+        }\n\nBest regards,\nA Carpinteira Website`,
+        html: `<h2>New Booking Inquiry</h2>
+<p>Hello,</p>
+<p>You have received a new booking inquiry from your website:</p>
+<ul>
+  <li><strong>Name:</strong> ${formState.name}</li>
+  <li><strong>Email:</strong> ${formState.email}</li>
+  <li><strong>Guests:</strong> ${formState.guests}</li>
+  <li><strong>Check-in:</strong> ${
+    startDate ? startDate.toLocaleDateString() : ""
+  }</li>
+  <li><strong>Check-out:</strong> ${
+    endDate ? endDate.toLocaleDateString() : ""
+  }</li>
+  <li><strong>Message:</strong> ${formState.message}</li>
+</ul>
+<p>Best regards,<br/>A Carpinteira Website</p>`,
+      };
+      const response = await fetch(
+        "https://rbgpmlmgnutmxffjuchk.supabase.co/functions/v1/send-email3",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: anonKey,
+            Authorization: `Bearer ${anonKey}`,
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+      const result = await response.json();
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormState({ name: "", email: "", message: "", guests: "" });
+      } else {
+        alert("There was an error sending your message: " + result.message);
+      }
+    } catch (error: any) {
+      alert("There was an error sending your message: " + error.message);
+    }
   };
 
   return (
