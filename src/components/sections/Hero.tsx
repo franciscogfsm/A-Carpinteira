@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
         >
           <div className="mb-6 w-full flex flex-col items-center">
             <h1
-              className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-display font-bold text-cream-50 leading-tight text-center max-w-2xl mx-auto"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-cream-50 leading-tight text-center max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-4xl"
               style={{ lineHeight: 1.15 }}
             >
               <span className="inline-block typewriter-main">
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="w-full flex flex-col items-center"
           >
-            <h2 className="text-base xs:text-lg md:text-2xl font-display font-normal text-cream-50 mb-8 text-center max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-2xl drop-shadow-lg">
+            <h2 className="text-lg xs:text-xl md:text-2xl lg:text-3xl font-display font-normal text-cream-50 mb-8 text-center max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl drop-shadow-lg">
               An authentic Portuguese experience in a traditional wooden country
               house, perfect for unforgettable holidays.
             </h2>
@@ -146,7 +146,7 @@ const Hero: React.FC = () => {
               buttonsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
             }
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="w-full flex flex-col sm:flex-row flex-wrap gap-3 max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-xl justify-center items-center"
+            className="w-full flex flex-col sm:flex-row flex-wrap gap-3 max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl justify-center items-center"
           >
             <div className="hero-btn-group hero-btn-single">
               <a href="#contact" className="hero-btn-modern">

@@ -45,9 +45,11 @@ const Location: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-display mb-6">Location</h2>
-          <div className="w-20 h-1 bg-green-800 mx-auto mb-8"></div>
-          <p className="max-w-2xl mx-auto text-brown-700">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display mb-6">
+            Location
+          </h2>
+          <div className="w-24 h-1 bg-green-800 mx-auto mb-8"></div>
+          <p className="max-w-3xl mx-auto text-brown-700 text-lg md:text-xl">
             Bairro Cineiro, Aldeia do Mato.
           </p>
         </motion.div>
@@ -59,7 +61,7 @@ const Location: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="flex items-center h-full"
           >
-            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border-2 border-green-200 min-h-[320px] lg:min-h-[440px] flex items-center justify-center">
+            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border-2 border-green-200 min-h-[360px] lg:min-h-[480px] flex items-center justify-center">
               <iframe
                 title="A Carpinteira Location Map"
                 src="https://www.google.com/maps?q=Aldeia+do+Mato,+Portugal&output=embed"
@@ -79,9 +81,9 @@ const Location: React.FC = () => {
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-cream-100 rounded-xl shadow-xl p-7 flex flex-col lg:flex-row gap-8">
-              <div className="flex-1 min-w-[220px]">
-                <h3 className="text-2xl font-display mb-6">
+            <div className="bg-cream-100 rounded-xl shadow-xl p-8 md:p-10 flex flex-col lg:flex-row gap-8 md:gap-10">
+              <div className="flex-1 min-w-[280px]">
+                <h3 className="text-2xl md:text-3xl font-display mb-8">
                   Nearby Attractions
                 </h3>
                 <div className="space-y-6">
@@ -105,8 +107,10 @@ const Location: React.FC = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex-1 min-w-[180px]">
-                <h3 className="text-xl font-display mb-3">Distances</h3>
+              <div className="flex-1 min-w-[220px]">
+                <h3 className="text-2xl md:text-3xl font-display mb-4">
+                  Distances
+                </h3>
                 <ul className="space-y-2 bg-green-100 p-5 rounded-lg shadow">
                   <li className="flex justify-between">
                     <span>Lisbon:</span>

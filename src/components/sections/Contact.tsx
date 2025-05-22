@@ -104,9 +104,11 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-2xl md:text-3xl font-display mb-2">Contact Us</h2>
-          <div className="w-16 h-1 bg-green-800 mx-auto mb-3"></div>
-          <p className="max-w-xl mx-auto text-green-900 text-base md:text-lg font-semibold mb-1 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display mb-2">
+            Contact Us
+          </h2>
+          <div className="w-20 h-1 bg-green-800 mx-auto mb-3"></div>
+          <p className="max-w-2xl mx-auto text-green-900 text-lg md:text-xl font-semibold mb-1 animate-fade-in">
             Ready to experience A Carpinteira? Send us your booking request!
           </p>
         </motion.div>
@@ -119,7 +121,7 @@ const Contact: React.FC = () => {
             className="lg:col-span-2"
           >
             <div className="bg-cream-100 text-brown-900 p-5 md:p-6 rounded-2xl shadow-xl h-full flex flex-col justify-between border border-brown-100 animate-fade-in">
-              <h3 className="text-xl md:text-2xl font-display mb-4 md:mb-6">
+              <h3 className="text-2xl md:text-3xl font-display mb-4 md:mb-6">
                 Contact Information
               </h3>
               <div className="space-y-6">
@@ -252,7 +254,7 @@ const Contact: React.FC = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-brown-700 mb-2 font-medium"
+                      className="block text-brown-700 mb-2 font-medium text-lg"
                     >
                       Full Name
                     </label>
@@ -278,7 +280,7 @@ const Contact: React.FC = () => {
                         value={formState.name}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 pl-10 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300"
+                        className="w-full p-4 pl-12 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300 text-lg"
                         placeholder="Your name"
                       />
                     </div>
@@ -286,7 +288,7 @@ const Contact: React.FC = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-brown-700 mb-2 font-medium"
+                      className="block text-brown-700 mb-2 font-medium text-lg"
                     >
                       Email
                     </label>
@@ -312,7 +314,7 @@ const Contact: React.FC = () => {
                         value={formState.email}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 pl-10 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300"
+                        className="w-full p-4 pl-12 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300 text-lg"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -322,7 +324,7 @@ const Contact: React.FC = () => {
                   <div>
                     <label
                       htmlFor="dates"
-                      className="block text-brown-700 mb-2 font-medium"
+                      className="block text-brown-700 mb-2 font-medium text-lg"
                     >
                       Check-in Date
                     </label>
@@ -350,7 +352,7 @@ const Contact: React.FC = () => {
                         startDate={startDate}
                         endDate={endDate}
                         minDate={new Date()}
-                        className="w-full p-3 pl-10 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300"
+                        className="w-full p-4 pl-12 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300 text-lg"
                         placeholderText="Select check-in date"
                         dateFormat="MMM d, yyyy"
                         locale="pt-BR"
@@ -360,7 +362,7 @@ const Contact: React.FC = () => {
                   <div>
                     <label
                       htmlFor="dates"
-                      className="block text-brown-700 mb-2 font-medium"
+                      className="block text-brown-700 mb-2 font-medium text-lg"
                     >
                       Check-out Date
                     </label>
@@ -387,8 +389,8 @@ const Contact: React.FC = () => {
                         selectsEnd
                         startDate={startDate}
                         endDate={endDate}
-                        minDate={startDate}
-                        className="w-full p-3 pl-10 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300"
+                        minDate={startDate || undefined}
+                        className="w-full p-4 pl-12 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300 text-lg"
                         placeholderText="Select check-out date"
                         dateFormat="MMM d, yyyy"
                         locale="pt-BR"
@@ -400,7 +402,7 @@ const Contact: React.FC = () => {
                   <div>
                     <label
                       htmlFor="guests"
-                      className="block text-brown-700 mb-2 font-medium"
+                      className="block text-brown-700 mb-2 font-medium text-lg"
                     >
                       Guests
                     </label>
@@ -427,7 +429,7 @@ const Contact: React.FC = () => {
                         onChange={handleChange}
                         min={1}
                         max={7}
-                        className="w-full p-3 pl-10 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300"
+                        className="w-full p-4 pl-12 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300 text-lg"
                         placeholder="Number of guests"
                       />
                     </div>
@@ -436,7 +438,7 @@ const Contact: React.FC = () => {
                 <div className="mb-6">
                   <label
                     htmlFor="message"
-                    className="block text-brown-700 mb-2 font-medium"
+                    className="block text-brown-700 mb-2 font-medium text-lg"
                   >
                     Message
                   </label>
@@ -446,7 +448,7 @@ const Contact: React.FC = () => {
                     value={formState.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full p-3 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300"
+                    className="w-full p-4 border border-brown-200 rounded-md focus:ring-2 focus:ring-green-700 focus:border-green-700 bg-cream-100 transition-all duration-150 placeholder-brown-300 text-lg"
                     placeholder="How can we help you?"
                   ></textarea>
                 </div>
