@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
     const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
     try {
       const payload = {
-        to: "acarpinteiralakehouse@gmail.com",
+        to: "martinsfrancisco2005@gmail.com",
         subject: `New Booking Inquiry from ${formState.name} - A Carpinteira`,
         text: `New Booking Inquiry\n\nHello,\n\nYou have received a new booking inquiry from your website:\n\nName: ${
           formState.name
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
 <p>Best regards,<br/>A Carpinteira Website</p>`,
       };
       const response = await fetch(
-        "https://rbgpmlmgnutmxffjuchk.supabase.co/functions/v1/send-email3",
+        "https://qaucsydrplnclnsauwwn.supabase.co/functions/v1/send-email3",
         {
           method: "POST",
           headers: {
