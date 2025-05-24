@@ -148,7 +148,10 @@ const Location: React.FC = () => {
             <p className="text-brown-700 mb-4 text-sm md:text-base">
               Discover the best spots to visit around Aldeia do Mato.
             </p>
-            <div className="w-full flex justify-center items-center min-h-[220px] sm:min-h-[300px] mb-8 overflow-hidden">
+            <div
+              id="nearby-attractions-carousel"
+              className="relative w-full flex justify-center items-center min-h-[220px] sm:min-h-[300px] mb-8 overflow-hidden"
+            >
               <AnimatePresence initial={false} custom={direction} mode="wait">
                 <motion.div
                   key={carouselIndex}
@@ -198,47 +201,6 @@ const Location: React.FC = () => {
                   </span>
                 </motion.div>
               </AnimatePresence>
-              {/* Arrows: always visible, smaller and closer to card on mobile */}
-              <button
-                className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-cream-100 border border-green-200 rounded-full p-2 shadow hover:bg-green-50 transition disabled:opacity-30 w-8 h-8 flex items-center justify-center"
-                onClick={scrollLeft}
-                aria-label="Scroll left"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              <button
-                className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-cream-100 border border-green-200 rounded-full p-2 shadow hover:bg-green-50 transition disabled:opacity-30 w-8 h-8 flex items-center justify-center"
-                onClick={scrollRight}
-                aria-label="Scroll right"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
             </div>
           </div>
           {/* Distances */}
