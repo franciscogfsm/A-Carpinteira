@@ -76,14 +76,14 @@ const About: React.FC = () => {
           <motion.div variants={itemVariants} className="relative mb-8 lg:mb-0">
             <div className="aspect-[4/5] rounded-lg overflow-hidden">
               <img
-                src="/Sala1.avif"
+                src="/Exterior3.avif"
                 alt="Interior of A Carpinteira"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute left-0 right-0 -bottom-6 mx-auto w-11/12 sm:w-2/3 h-32 sm:h-40 bg-green-800 rounded-lg p-4 sm:p-6 text-cream-50 flex items-center justify-center shadow-lg">
+            <div className="absolute left-0 right-0 -bottom-6 mx-auto w-11/12 sm:w-2/3 h-28 sm:h-32 bg-green-800 rounded-lg p-2 sm:p-4 text-cream-50 flex items-center justify-center shadow-lg">
               <p
-                className="font-display italic text-center text-lg sm:text-2xl leading-relaxed text-cream-200 px-4 sm:px-8"
+                className="font-display italic text-center text-base sm:text-lg md:text-xl leading-relaxed text-cream-200 px-2 sm:px-4"
                 style={{
                   fontFamily: "Playfair Display, serif",
                   fontStyle: "italic",
@@ -91,7 +91,7 @@ const About: React.FC = () => {
                 }}
               >
                 "A perfect retreat to disconnect and appreciate the true essence
-                of Portugal."
+                essence of the purest Portuguese waters, Zêzere river"
               </p>
             </div>
           </motion.div>

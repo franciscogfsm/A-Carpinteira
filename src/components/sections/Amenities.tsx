@@ -57,7 +57,7 @@ const amenities = [
   {
     icon: <Bath size={28} />,
     title: "Hot Water",
-    description: "Reliable hot water system for your comfort.",
+    description: "Enjoy the pleasure of taking an outside hot shower.",
   },
   {
     icon: <Coffee size={28} />,
@@ -80,7 +80,7 @@ const amenities = [
     icon: <Waves size={28} />,
     title: "SUP Canoe & Swimming",
     description:
-      "Enjoy a canoe ride, a refreshing dip in the lake, or a peaceful stand-up paddle session anytime.",
+      "Enjoy a canoe ride, a refreshing dip in the lake, or a peaceful stand-up paddle session anytime. Life vests provided for your safety.",
   },
 ];
 

@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center w-full h-full"
         style={{
-          backgroundImage: "url('/casa fora 2 .avif')",
+          backgroundImage: "url('/casa fora.avif')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-70 sm:bg-opacity-60 backdrop-blur-sm w-full h-full"></div>

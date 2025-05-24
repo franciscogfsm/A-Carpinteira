@@ -54,7 +54,7 @@ const galleryImages = [
     alt: "House outside alternate view",
     category: "exterior",
   },
-  { id: 9, src: "/barraca.avif", alt: "Garden shed", category: "exterior" },
+  { id: 9, src: "/barraca.avif", alt: "Garden shed", category: "lake" },
   {
     id: 10,
     src: "/DucheFora.avif",
@@ -74,6 +74,13 @@ const galleryImages = [
     category: "kitchen",
   },
   {
+    id: 12.1,
+    src: "/Sala2.avif",
+    alt: "Rustic kitchen area",
+    category: "interior",
+    key: "Sala2-interior",
+  },
+  {
     id: 13,
     src: "/Sala3.avif",
     alt: "Living area with sofa",
@@ -86,12 +93,18 @@ const galleryImages = [
     alt: "Living room alternate view",
     category: "interior",
   },
-  { id: 16, src: "/Quarto1.avif", alt: "Main bedroom", category: "bedrooms" },
   {
     id: 17,
     src: "/Quarto 2.avif",
     alt: "Second bedroom",
     category: "bedrooms",
+  },
+  {
+    id: 21.1,
+    src: "/Casa de Banho3.avif",
+    alt: "Third bathroom",
+    category: "bedrooms",
+    key: "Casa de Banho3-bedrooms",
   },
   { id: 18, src: "/Quarto3.avif", alt: "Third bedroom", category: "bedrooms" },
   {
@@ -116,7 +129,7 @@ const galleryImages = [
     id: 22,
     src: "/banco.avif",
     alt: "Bench in the garden",
-    category: "exterior",
+    category: "lake",
   },
   {
     id: 23,
@@ -124,15 +137,46 @@ const galleryImages = [
     alt: "Hammock in the garden",
     category: "exterior",
   },
-  { id: 24, src: "/rio1.avif", alt: "River view 1", category: "exterior" },
-  { id: 25, src: "/rio2.avif", alt: "River view 2", category: "exterior" },
-  { id: 26, src: "/rio3.avif", alt: "River view 3", category: "exterior" },
-  { id: 27, src: "/quarto4.jpeg", alt: "Fourth bedroom", category: "bedrooms" },
+  { id: 24, src: "/rio1.avif", alt: "River view 1", category: "lake" },
+  {
+    id: 25,
+    src: "/cozinha1.jpeg",
+    alt: "Kitchen view 1",
+    category: "kitchen",
+  },
+  {
+    id: 29,
+    src: "/cozinha2.jpeg",
+    alt: "Kitchen view 2",
+    category: "kitchen",
+  },
+  {
+    id: 30,
+    src: "/rio4.jpeg",
+    alt: "River and paddleboard access",
+    category: "lake",
+  },
+  {
+    id: 31,
+    src: "/exterior5.jpeg",
+    alt: "Path to the shed with wildflowers",
+    category: "lake",
+  },
+  {
+    id: 32,
+    src: "/exterior6.jpeg",
+    alt: "Shed with paddleboards and life jackets inside",
+    category: "exterior",
+  },
+  { id: 26, src: "/rio2.avif", alt: "River view 2", category: "lake" },
+  { id: 27, src: "/rio3.avif", alt: "River view 3", category: "lake" },
+  { id: 28, src: "/quarto4.jpeg", alt: "Fourth bedroom", category: "bedrooms" },
 ];
 
 // Categories for filtering
 const categories = [
   { id: "all", name: "All" },
+  { id: "lake", name: "Lake" },
   { id: "exterior", name: "Exterior" },
   { id: "interior", name: "Interior" },
   { id: "bedrooms", name: "Bedrooms" },
@@ -159,9 +203,13 @@ const Gallery: React.FC = () => {
       ? galleryImages
       : galleryImages.filter((img) => img.category === activeCategory);
 
-  // Reset carousel index when category changes
+  // Reset carousel index and scroll to start when category changes
   useEffect(() => {
     setCurrentIdx(0);
+    const el = scrollContainerRef.current;
+    if (el) {
+      el.scrollTo({ left: 0, behavior: "auto" });
+    }
   }, [activeCategory]);
 
   // Preload first image
@@ -338,7 +386,7 @@ const Gallery: React.FC = () => {
             >
               {filteredImages.map((img, idx) => (
                 <motion.div
-                  key={img.src}
+                  key={img.key || img.src}
                   className="relative aspect-square w-[90vw] max-w-[520px] sm:max-w-[700px] md:max-w-[900px] rounded-2xl overflow-hidden bg-brown-200 shadow-lg flex items-center justify-center snap-center flex-shrink-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
