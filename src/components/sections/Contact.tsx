@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
                   <div>
                     <div className="font-semibold mb-1">Address</div>
                     <div>
-                      Bairro Cineiro, Aldeia do Mato
+                      Bairro Cimeiro, Aldeia do Mato
                       <br />
                     </div>
                   </div>

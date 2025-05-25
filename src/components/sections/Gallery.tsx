@@ -54,6 +54,24 @@ const galleryImages = [
     alt: "House outside alternate view",
     category: "exterior",
   },
+  {
+    id: 33,
+    src: "/Exterior7.jpeg",
+    alt: "House exterior view 7",
+    category: "exterior",
+  },
+  {
+    id: 34,
+    src: "/Exterior8.jpeg",
+    alt: "House exterior view 8",
+    category: "exterior",
+  },
+  {
+    id: 35,
+    src: "/Exterior9.jpeg",
+    alt: "House exterior view 9",
+    category: "exterior",
+  },
   { id: 9, src: "/barraca.avif", alt: "Garden shed", category: "lake" },
   {
     id: 10,
@@ -66,12 +84,6 @@ const galleryImages = [
     src: "/Sala1.avif",
     alt: "Living room with window",
     category: "interior",
-  },
-  {
-    id: 12,
-    src: "/Sala2.avif",
-    alt: "Rustic kitchen area",
-    category: "kitchen",
   },
   {
     id: 12.1,
@@ -92,6 +104,24 @@ const galleryImages = [
     src: "/Sala5.avif",
     alt: "Living room alternate view",
     category: "interior",
+  },
+  {
+    id: 38,
+    src: "/kitchenopen.jpeg",
+    alt: "Open kitchen view",
+    category: "kitchen",
+  },
+  {
+    id: 25,
+    src: "/cozinha1.jpeg",
+    alt: "Kitchen view 1",
+    category: "kitchen",
+  },
+  {
+    id: 29,
+    src: "/cozinha2.jpeg",
+    alt: "Kitchen view 2",
+    category: "kitchen",
   },
   {
     id: 17,
@@ -139,21 +169,15 @@ const galleryImages = [
   },
   { id: 24, src: "/rio1.avif", alt: "River view 1", category: "lake" },
   {
-    id: 25,
-    src: "/cozinha1.jpeg",
-    alt: "Kitchen view 1",
-    category: "kitchen",
-  },
-  {
-    id: 29,
-    src: "/cozinha2.jpeg",
-    alt: "Kitchen view 2",
-    category: "kitchen",
-  },
-  {
     id: 30,
     src: "/rio4.jpeg",
     alt: "River and paddleboard access",
+    category: "lake",
+  },
+  {
+    id: 37,
+    src: "/rio5.jpeg",
+    alt: "River view 5",
     category: "lake",
   },
   {

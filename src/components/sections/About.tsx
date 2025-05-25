@@ -91,7 +91,7 @@ const About: React.FC = () => {
                 }}
               >
                 "A perfect retreat to disconnect and appreciate the true essence
-                essence of the purest Portuguese waters, Zêzere river"
+                of the purest portuguese waters, Zêzere river"
               </p>
             </div>
           </motion.div>
@@ -135,6 +135,7 @@ const About: React.FC = () => {
                 Perfect for those in search of{" "}
                 <span className="about-highlight">absolute calm</span> — and for
                 those who can't resist a{" "}
+                <span className="about-highlight">Stand-up Paddle</span>, a{" "}
                 <span className="about-highlight">canoe ride</span> or a{" "}
                 <span className="about-highlight">
                   refreshing dip in the lake

@@ -134,8 +134,8 @@ const Hero: React.FC = () => {
             className="w-full flex flex-col items-center"
           >
             <h2 className="text-lg xs:text-xl md:text-2xl lg:text-3xl font-display font-normal text-cream-50 mb-8 text-center max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl drop-shadow-lg">
-              An authentic Portuguese experience in a traditional wooden country
-              house, perfect for unforgettable holidays.
+              An authentic Portuguese experience in a traditional country house
+              by the lake, perfect for unforgettable holidays.
             </h2>
           </motion.div>
 
