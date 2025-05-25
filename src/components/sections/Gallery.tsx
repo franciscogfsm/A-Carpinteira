@@ -56,19 +56,19 @@ const galleryImages = [
   },
   {
     id: 33,
-    src: "/Exterior7.jpeg",
+    src: "/exterior7.jpeg",
     alt: "House exterior view 7",
     category: "exterior",
   },
   {
     id: 34,
-    src: "/Exterior8.jpeg",
+    src: "/exterior8.jpeg",
     alt: "House exterior view 8",
     category: "exterior",
   },
   {
     id: 35,
-    src: "/Exterior9.jpeg",
+    src: "/exterior9.jpeg",
     alt: "House exterior view 9",
     category: "exterior",
   },
