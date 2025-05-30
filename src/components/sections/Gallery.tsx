@@ -72,6 +72,12 @@ const galleryImages = [
     alt: "House exterior view 9",
     category: "exterior",
   },
+  {
+    id: 36,
+    src: "/exterior10.jpeg",
+    alt: "River view 10",
+    category: "lake",
+  },
   { id: 9, src: "/barraca.avif", alt: "Garden shed", category: "lake" },
   {
     id: 10,
