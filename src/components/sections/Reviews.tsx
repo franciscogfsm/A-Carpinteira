@@ -163,7 +163,7 @@ export default function Reviews() {
 
   // Memoized scroll check function
   const checkScrollArrows = useCallback(() => {
-    if (reviewsRef.current) {
+    if (reviewsRef.current && reviews.length > 0) {
       const { scrollWidth, clientWidth, scrollLeft } = reviewsRef.current;
       const isScrollable = scrollWidth > clientWidth;
 
@@ -171,8 +171,12 @@ export default function Reviews() {
       setShowRightArrow(
         isScrollable && scrollLeft < scrollWidth - clientWidth - 10
       );
+    } else {
+      // If no reviews, hide both arrows
+      setShowLeftArrow(false);
+      setShowRightArrow(false);
     }
-  }, []);
+  }, [reviews.length]);
 
   // Start auto-scroll when reviews are loaded
   useEffect(() => {
@@ -368,139 +372,129 @@ export default function Reviews() {
 
         {/* Reviews List */}
         <div className="relative">
-          {reviews.length === 0 && !isLoading ? (
-            <div className="text-center py-8">
-              <p className="text-brown-600 text-sm md:text-base">
-                Nenhuma avaliação encontrada.
-              </p>
-            </div>
-          ) : (
-            <>
+          {(reviews.length > 0 || isLoading) && (
+            <div
+              ref={reviewsRef}
+              className="flex overflow-x-auto space-x-3 md:space-x-6 lg:space-x-8 pb-4 px-2 md:px-4 scroll-smooth"
+              style={
+                {
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none",
+                  scrollSnapType: isMobile ? "x proximity" : "none",
+                  WebkitScrollbar: "none",
+                } as React.CSSProperties
+              }
+              onMouseEnter={handleUserInteraction}
+              onTouchStart={handleUserInteraction}
+              onScroll={handleUserInteraction}
+            >
               {" "}
-              <div
-                ref={reviewsRef}
-                className="flex overflow-x-auto space-x-3 md:space-x-6 lg:space-x-8 pb-4 px-2 md:px-4 scroll-smooth"
-                style={
-                  {
-                    scrollbarWidth: "none",
-                    msOverflowStyle: "none",
-                    scrollSnapType: isMobile ? "x proximity" : "none",
-                    WebkitScrollbar: "none",
-                  } as React.CSSProperties
-                }
-                onMouseEnter={handleUserInteraction}
-                onTouchStart={handleUserInteraction}
-                onScroll={handleUserInteraction}
-              >
-                {" "}
-                {reviews.map((review, index) => (
-                  <div
-                    key={review.id}
-                    className={`
-                      flex-none bg-white p-4 md:p-6 rounded-lg shadow-md border border-brown-100
-                      hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out
-                      ${isMobile ? "w-72" : "w-80"}
-                    `}
-                    style={{
-                      scrollSnapAlign: isMobile ? "start" : "none",
-                      animationDelay: `${index * 0.1}s`,
-                    }}
-                  >
-                    <div className="flex flex-col h-full">
-                      <div className="flex-grow">
-                        <h4 className="font-semibold text-brown-900 mb-2 text-sm md:text-base">
-                          {review.client_name}
-                        </h4>
-                        <div className="flex items-center mb-3">
-                          {[...Array(5)].map((_, i) => (
-                            <svg
-                              key={i}
-                              className={`w-4 h-4 md:w-5 md:h-5 ${
-                                i < review.rating
-                                  ? "text-yellow-500"
-                                  : "text-gray-300"
-                              }`}
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          ))}
-                        </div>
-                        <p className="text-brown-700 mb-4 text-sm md:text-base leading-relaxed">
-                          {review.comment}
-                        </p>
+              {reviews.map((review, index) => (
+                <div
+                  key={review.id}
+                  className={`
+                    flex-none bg-white p-4 md:p-6 rounded-lg shadow-md border border-brown-100
+                    hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out
+                    ${isMobile ? "w-72" : "w-80"}
+                  `}
+                  style={{
+                    scrollSnapAlign: isMobile ? "start" : "none",
+                    animationDelay: `${index * 0.1}s`,
+                  }}
+                >
+                  <div className="flex flex-col h-full">
+                    <div className="flex-grow">
+                      <h4 className="font-semibold text-brown-900 mb-2 text-sm md:text-base">
+                        {review.client_name}
+                      </h4>
+                      <div className="flex items-center mb-3">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className={`w-4 h-4 md:w-5 md:h-5 ${
+                              i < review.rating
+                                ? "text-yellow-500"
+                                : "text-gray-300"
+                            }`}
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
                       </div>
-                      <span className="text-xs md:text-sm text-gray-500 mt-auto">
-                        {new Date(review.created_at).toLocaleDateString(
-                          "pt-BR"
-                        )}
-                      </span>
+                      <p className="text-brown-700 mb-4 text-sm md:text-base leading-relaxed">
+                        {review.comment}
+                      </p>
                     </div>
+                    <span className="text-xs md:text-sm text-gray-500 mt-auto">
+                      {new Date(review.created_at).toLocaleDateString("pt-BR")}
+                    </span>
                   </div>
-                ))}{" "}
-                {isLoading && (
-                  <div
-                    className={`
-                      flex-none bg-white p-4 md:p-6 rounded-lg shadow-md border border-brown-100 animate-pulse
-                      ${isMobile ? "w-72" : "w-80"}
-                    `}
-                    style={{
-                      scrollSnapAlign: isMobile ? "start" : "none",
-                    }}
-                  >
-                    <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded mb-3 w-3/4"></div>
-                    <div className="h-12 md:h-16 bg-gray-200 rounded"></div>
-                  </div>
-                )}
-              </div>{" "}
-              {/* Navigation Arrows - Desktop Only */}
-              {!isMobile && showLeftArrow && (
-                <button
-                  onClick={() => scroll("left")}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-800 z-10 opacity-80 hover:opacity-100"
-                  aria-label="Scroll left"
+                </div>
+              ))}{" "}
+              {isLoading && (
+                <div
+                  className={`
+                    flex-none bg-white p-4 md:p-6 rounded-lg shadow-md border border-brown-100 animate-pulse
+                    ${isMobile ? "w-72" : "w-80"}
+                  `}
+                  style={{
+                    scrollSnapAlign: isMobile ? "start" : "none",
+                  }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-brown-800 transition-transform duration-300 hover:-translate-x-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </button>
+                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded mb-3 w-3/4"></div>
+                  <div className="h-12 md:h-16 bg-gray-200 rounded"></div>
+                </div>
               )}
-              {!isMobile && showRightArrow && (
-                <button
-                  onClick={() => scroll("right")}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-800 z-10 opacity-80 hover:opacity-100"
-                  aria-label="Scroll right"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-brown-800 transition-transform duration-300 hover:translate-x-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              )}
-            </>
+            </div>
+          )}
+
+          {/* Navigation Arrows - Desktop Only */}
+          {!isMobile && showLeftArrow && (
+            <button
+              onClick={() => scroll("left")}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-800 z-10 opacity-80 hover:opacity-100"
+              aria-label="Scroll left"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-brown-800 transition-transform duration-300 hover:-translate-x-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          )}
+          {!isMobile && showRightArrow && (
+            <button
+              onClick={() => scroll("right")}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-800 z-10 opacity-80 hover:opacity-100"
+              aria-label="Scroll right"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-brown-800 transition-transform duration-300 hover:translate-x-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           )}
         </div>
       </div>
