@@ -13,7 +13,7 @@ export default function Login() {
       localStorage.setItem("isAdmin", "true");
       navigate("/admin");
     } else {
-      setError("Senha incorreta");
+      setError("Incorrect password");
     }
   };
 
@@ -22,13 +22,13 @@ export default function Login() {
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-lg border border-brown-100">
         <div>
           <h2 className="mt-6 text-center text-3xl font-display font-bold text-brown-900">
-            Acesso Administrativo
+            Administrative Access
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="password" className="sr-only">
-              Senha
+              Password
             </label>
             <input
               id="password"
@@ -38,7 +38,7 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="appearance-none rounded-md relative block w-full px-3 py-2 border border-brown-300 placeholder-gray-500 text-brown-800 focus:outline-none focus:ring-green-800 focus:border-green-800 focus:z-10 sm:text-sm bg-cream-50"
-              placeholder="Senha"
+              placeholder="Password"
             />
           </div>
 
@@ -48,7 +48,7 @@ export default function Login() {
 
           <div>
             <button type="submit" className="btn btn-primary w-full">
-              Entrar
+              Log In
             </button>
           </div>
         </form>

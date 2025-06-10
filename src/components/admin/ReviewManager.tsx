@@ -34,7 +34,7 @@ export default function ReviewManager() {
     if (error) {
       console.error("Error fetching reviews:", error);
       setNotification({
-        message: "Erro ao carregar avaliações.",
+        message: "Error loading reviews.",
         type: "error",
       });
       return;
@@ -53,12 +53,12 @@ export default function ReviewManager() {
 
     if (error) {
       console.error("Error approving review:", error);
-      setNotification({ message: "Erro ao aprovar avaliação.", type: "error" });
+      setNotification({ message: "Error approving review.", type: "error" });
       return;
     }
 
     setNotification({
-      message: "Avaliação aprovada com sucesso!",
+      message: "Review approved successfully!",
       type: "success",
     });
     fetchReviews();
@@ -66,7 +66,7 @@ export default function ReviewManager() {
 
   const handleDelete = async (reviewId: number) => {
     setNotification(null); // Clear previous notifications
-    if (!confirm("Tem certeza que deseja excluir esta avaliação?")) {
+    if (!confirm("Are you sure you want to delete this review?")) {
       return;
     }
 
@@ -77,12 +77,12 @@ export default function ReviewManager() {
 
     if (error) {
       console.error("Error deleting review:", error);
-      setNotification({ message: "Erro ao excluir avaliação.", type: "error" });
+      setNotification({ message: "Error deleting review.", type: "error" });
       return;
     }
 
     setNotification({
-      message: "Avaliação excluída com sucesso!",
+      message: "Review deleted successfully!",
       type: "success",
     });
     fetchReviews();
@@ -103,7 +103,7 @@ export default function ReviewManager() {
     <div className="p-6 bg-cream-50 rounded-lg shadow-lg border border-brown-100">
       <div className="mb-8">
         <h2 className="font-display text-2xl text-brown-900 mb-4">
-          Gerenciar Avaliações
+          Manage Reviews
         </h2>
         <div className="flex flex-wrap gap-4 mb-4">
           <button
@@ -112,7 +112,7 @@ export default function ReviewManager() {
               filter === "all" ? "btn-primary" : "btn-secondary"
             }`}
           >
-            Todas
+            All
           </button>
           <button
             onClick={() => setFilter("approved")}
@@ -120,7 +120,7 @@ export default function ReviewManager() {
               filter === "approved" ? "btn-primary" : "btn-secondary"
             }`}
           >
-            Aprovadas
+            Approved
           </button>
           <button
             onClick={() => setFilter("pending")}
@@ -128,18 +128,16 @@ export default function ReviewManager() {
               filter === "pending" ? "btn-primary" : "btn-secondary"
             }`}
           >
-            Pendentes
+            Pending
           </button>
         </div>
       </div>
 
       {isLoading ? (
-        <div className="text-center text-brown-700">
-          Carregando avaliações...
-        </div>
+        <div className="text-center text-brown-700">Loading reviews...</div>
       ) : filteredReviews.length === 0 ? (
         <div className="text-center text-brown-700">
-          Nenhuma avaliação encontrada para este filtro.
+          No reviews found for this filter.
         </div>
       ) : (
         <div className="space-y-6">
@@ -171,7 +169,7 @@ export default function ReviewManager() {
                   </div>
                 </div>
                 <span className="text-sm text-gray-500">
-                  {new Date(review.created_at).toLocaleDateString("pt-BR")}
+                  {new Date(review.created_at).toLocaleDateString("en-US")}
                 </span>
               </div>
               <p className="text-brown-700 mb-4">{review.comment}</p>
@@ -181,14 +179,14 @@ export default function ReviewManager() {
                     onClick={() => handleApprove(review.id)}
                     className="btn btn-primary"
                   >
-                    Aprovar
+                    Approve
                   </button>
                 )}
                 <button
                   onClick={() => handleDelete(review.id)}
                   className="btn bg-red-600 text-white hover:bg-red-700"
                 >
-                  Excluir
+                  Delete
                 </button>
               </div>
             </div>

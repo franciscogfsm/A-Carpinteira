@@ -257,7 +257,7 @@ export default function Reviews() {
       });
       setNotification({
         message:
-          "Obrigado pela sua avaliação! Ela será revista antes de ser publicada.",
+          "Thank you for your review! It will be reviewed before being published.",
         type: "success",
       });
     } catch (error) {
@@ -293,13 +293,13 @@ export default function Reviews() {
     <section className="section-padding bg-cream-50">
       <div className="container-custom">
         <h2 className="text-center font-display text-2xl md:text-3xl lg:text-4xl text-brown-900 mb-8 md:mb-12">
-          Avaliações dos Nossos Clientes
+          Client Reviews
         </h2>
 
         {/* Review Form */}
         <div className="max-w-2xl mx-auto mb-12 md:mb-16 bg-white p-4 md:p-8 rounded-lg shadow-lg border border-brown-100">
           <h3 className="font-display text-lg md:text-xl text-brown-800 mb-4 md:mb-6">
-            Deixe sua Avaliação
+            Leave your Review
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div>
@@ -307,7 +307,7 @@ export default function Reviews() {
                 htmlFor="client_name"
                 className="block text-sm font-body text-brown-700 mb-1"
               >
-                Nome
+                Name
               </label>
               <input
                 type="text"
@@ -325,7 +325,7 @@ export default function Reviews() {
                 htmlFor="rating"
                 className="block text-sm font-body text-brown-700 mb-1"
               >
-                Avaliação
+                Rating
               </label>
               <select
                 id="rating"
@@ -337,7 +337,7 @@ export default function Reviews() {
               >
                 {[5, 4, 3, 2, 1].map((rating) => (
                   <option key={rating} value={rating}>
-                    {rating} {rating === 1 ? "estrela" : "estrelas"}
+                    {rating} {rating === 1 ? "star" : "stars"}
                   </option>
                 ))}
               </select>
@@ -347,7 +347,7 @@ export default function Reviews() {
                 htmlFor="comment"
                 className="block text-sm font-body text-brown-700 mb-1"
               >
-                Comentário
+                Comment
               </label>
               <textarea
                 id="comment"
@@ -365,7 +365,7 @@ export default function Reviews() {
               disabled={isSubmitting}
               className="btn btn-primary w-full text-sm md:text-base"
             >
-              {isSubmitting ? "Enviando..." : "Enviar Avaliação"}
+              {isSubmitting ? "Submitting..." : "Submit Review"}
             </button>
           </form>
         </div>
